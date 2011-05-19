@@ -5,9 +5,6 @@ static const CFStringRef kSelectedConfigurationPrefKey = CFSTR("SelectedConfigur
 
 @implementation PCPreferences
 
-@synthesize configurations;
-@synthesize selectedConfigurationIndex;
-
 - (id)init
 {
     self = [super init];
@@ -25,15 +22,16 @@ static const CFStringRef kSelectedConfigurationPrefKey = CFSTR("SelectedConfigur
         }
 
         Boolean exists;
-        selectedConfigurationIndex = CFPreferencesGetAppIntegerValue(kSelectedConfigurationPrefKey, kCFPreferencesCurrentApplication, &exists);
+        NSInteger index = CFPreferencesGetAppIntegerValue(kSelectedConfigurationPrefKey, kCFPreferencesCurrentApplication, &exists);
         if (!exists)
         {
-            selectedConfigurationIndex = 0;
+            index = 0;
         }
-        if (selectedConfigurationIndex < 0 || selectedConfigurationIndex >= [configurations count])
+        if (index < 0 || index >= [configurations count])
         {
-            selectedConfigurationIndex = [configurations count] ? 0 : NSNotFound;
+            index = [configurations count] ? 0 : NSNotFound;
         }
+        self.selectedConfigurationIndex = index;
     }
 
     return self;
@@ -44,21 +42,61 @@ static const CFStringRef kSelectedConfigurationPrefKey = CFSTR("SelectedConfigur
     return [[configurations objectAtIndex:index] objectForKey:@"host"];
 }
 
+- (void)saveConfigurations
+{
+    CFPreferencesSetAppValue(kConfigurationsPrefKey, configurations, kCFPreferencesCurrentApplication);
+    CFPreferencesAppSynchronize(kCFPreferencesCurrentApplication);
+}
+
+- (void)setConfigurations:(NSMutableArray *)newConfs
+{
+    @synchronized(self)
+    {
+        [newConfs retain];
+        [configurations release];
+        configurations = newConfs;
+        [self saveConfigurations];
+    }
+}
+
+- (NSMutableArray *)configurations
+{
+    return configurations;
+}
+
 // KVC compliance
 - (void)insertObject:(id)object inConfigurationsAtIndex:(NSUInteger)index
 {
-    [configurations insertObject:object atIndex:index];
+    @synchronized(self)
+    {
+        [configurations insertObject:object atIndex:index];
+        [self saveConfigurations];
+    }
 }
 
 // KVC compliance
 - (void)removeObjectFromConfigurationsAtIndex:(NSUInteger)index
 {
-    [configurations removeObjectAtIndex:index];
+    @synchronized(self)
+    {
+        [configurations removeObjectAtIndex:index];
+        [self saveConfigurations];
+    }
 }
 
-- (void)save
+- (NSInteger)selectedConfigurationIndex
 {
-    CFPreferencesSetAppValue(kConfigurationsPrefKey, configurations, kCFPreferencesCurrentApplication);
+    return selectedConfigurationIndex;
+}
+
+- (void)setSelectedConfigurationIndex:(NSInteger)index
+{
+    @synchronized(self)
+    {
+        selectedConfigurationIndex = index;
+        CFPreferencesSetAppValue(kSelectedConfigurationPrefKey, [NSNumber numberWithInteger:index], kCFPreferencesCurrentApplication);
+        CFPreferencesAppSynchronize(kCFPreferencesCurrentApplication);
+    }
 }
 
 - (void)dealloc
