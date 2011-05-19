@@ -1,7 +1,7 @@
 #import <Foundation/Foundation.h>
 
 
-@interface PCPreferences : NSObject {
+@interface PCPreferences : NSObject <NSOutlineViewDataSource> {
 @private
     NSMutableArray *configurations;
     NSInteger selectedConfigurationIndex;

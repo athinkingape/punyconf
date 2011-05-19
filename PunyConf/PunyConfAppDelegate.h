@@ -1,11 +1,12 @@
 #import <Cocoa/Cocoa.h>
 
 @class PCPreferences;
+@class PreferencesWindowController;
 
 @interface PunyConfAppDelegate : NSObject <NSApplicationDelegate> {
 @private
     PCPreferences *preferences;
-    NSWindow *preferencesWindow;
+    PreferencesWindowController *preferencesController;
 
     NSStatusItem *statusItem;
     NSMenu *menuBarExtra;
@@ -16,7 +17,6 @@
 @property (assign) IBOutlet NSMenu *menuBarExtra;
 @property (assign) IBOutlet NSMenuItem *configurationsHeaderItem;
 @property (assign) IBOutlet NSMenuItem *configurationsFooterItem;
-@property (assign) IBOutlet NSWindow *preferencesWindow;
 
 - (IBAction)showPreferences:(id)sender;
 

@@ -18,6 +18,7 @@
 		50C37FBB138505D4002BFC7B /* PCPreferences.m in Sources */ = {isa = PBXBuildFile; fileRef = 50C37FBA138505D3002BFC7B /* PCPreferences.m */; };
 		50C37FC113851064002BFC7B /* Preferences.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50C37FC013851064002BFC7B /* Preferences.xib */; };
 		50C37FC3138582F1002BFC7B /* Box.png in Resources */ = {isa = PBXBuildFile; fileRef = 50C37FC2138582F1002BFC7B /* Box.png */; };
+		50C37FFA138597F2002BFC7B /* PreferencesWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50C37FF9138597F2002BFC7B /* PreferencesWindowController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,8 @@
 		50C37FBA138505D3002BFC7B /* PCPreferences.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCPreferences.m; sourceTree = "<group>"; };
 		50C37FC013851064002BFC7B /* Preferences.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Preferences.xib; sourceTree = "<group>"; };
 		50C37FC2138582F1002BFC7B /* Box.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Box.png; sourceTree = "<group>"; };
+		50C37FF8138597F2002BFC7B /* PreferencesWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreferencesWindowController.h; sourceTree = "<group>"; };
+		50C37FF9138597F2002BFC7B /* PreferencesWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PreferencesWindowController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +102,8 @@
 				50C37FA51384EDB2002BFC7B /* MainMenu.xib */,
 				50C37FB9138505D3002BFC7B /* PCPreferences.h */,
 				50C37FBA138505D3002BFC7B /* PCPreferences.m */,
+				50C37FF8138597F2002BFC7B /* PreferencesWindowController.h */,
+				50C37FF9138597F2002BFC7B /* PreferencesWindowController.m */,
 				50C37FC013851064002BFC7B /* Preferences.xib */,
 				50C37FAD1384F77D002BFC7B /* local.png */,
 				50C37FAF1384F969002BFC7B /* local-alt.png */,
@@ -189,6 +194,7 @@
 				50C37F9E1384EDB1002BFC7B /* main.m in Sources */,
 				50C37FA41384EDB1002BFC7B /* PunyConfAppDelegate.m in Sources */,
 				50C37FBB138505D4002BFC7B /* PCPreferences.m in Sources */,
+				50C37FFA138597F2002BFC7B /* PreferencesWindowController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

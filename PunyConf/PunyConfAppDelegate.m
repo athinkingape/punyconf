@@ -1,5 +1,6 @@
 #import "PunyConfAppDelegate.h"
 #import "PCPreferences.h"
+#import "PreferencesWindowController.h"
 
 
 @implementation PunyConfAppDelegate
@@ -7,7 +8,6 @@
 @synthesize menuBarExtra;
 @synthesize configurationsHeaderItem;
 @synthesize configurationsFooterItem;
-@synthesize preferencesWindow;
 
 - (void)awakeFromNib
 {
@@ -82,23 +82,23 @@
 
 - (IBAction)showPreferences:(id)sender
 {
-    if (!preferencesWindow)
+    if (!preferencesController)
     {
-        NSWindowController *preferencesController = [[NSWindowController alloc] initWithWindowNibName:@"Preferences"];
+        preferencesController = [[PreferencesWindowController alloc] initWithWindowNibName:@"Preferences"];
         [preferencesController loadWindow];
-        preferencesWindow = [[preferencesController window] retain];
+        [[preferencesController preferencesOutline] setDataSource:preferences];
+        [[preferencesController preferencesOutline] reloadData];
         [preferencesController showWindow:sender];
-        [preferencesController release];
     }
     // XXX: Focus it
 }
 
 - (void)windowWillClose:(NSNotification *)notification
 {
-    if (preferencesWindow == [notification object])
+    if ([preferencesController window] == [notification object])
     {
-        [preferencesWindow release];
-        preferencesWindow = nil;
+        [preferencesController release];
+        preferencesController = nil;
     }
 }
 
@@ -112,7 +112,7 @@
 - (void)dealloc
 {
     [preferences release];
-    [preferencesWindow release];
+    [preferencesController release];
     [statusItem release];
     [super dealloc];
 }
