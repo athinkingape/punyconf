@@ -13,7 +13,7 @@ static const CFStringRef kSelectedConfigurationPrefKey = CFSTR("SelectedConfigur
         NSArray *prevConfs = CFPreferencesCopyAppValue(kConfigurationsPrefKey, kCFPreferencesCurrentApplication);
         if (prevConfs)
         {
-            configurations = [[NSMutableArray alloc] initWithArray:prevConfs copyItems:YES];
+            configurations = (NSMutableArray *) CFPropertyListCreateDeepCopy(kCFAllocatorDefault, prevConfs, kCFPropertyListMutableContainers);
             [prevConfs release];
         }
         else
