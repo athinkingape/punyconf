@@ -63,9 +63,19 @@
 							<string key="NSResourceName">NSMenuMixedState</string>
 						</object>
 					</object>
+					<object class="NSMenuItem" id="21999158">
+						<reference key="NSMenu" ref="970213341"/>
+						<bool key="NSIsDisabled">YES</bool>
+						<bool key="NSIsSeparator">YES</bool>
+						<string key="NSTitle"/>
+						<string key="NSKeyEquiv"/>
+						<int key="NSMnemonicLoc">2147483647</int>
+						<reference key="NSOnImage" ref="16436140"/>
+						<reference key="NSMixedImage" ref="626079381"/>
+					</object>
 					<object class="NSMenuItem" id="304413193">
 						<reference key="NSMenu" ref="970213341"/>
-						<string key="NSTitle">Item 2</string>
+						<string key="NSTitle">Preferences...</string>
 						<string key="NSKeyEquiv"/>
 						<int key="NSMnemonicLoc">2147483647</int>
 						<reference key="NSOnImage" ref="16436140"/>
@@ -73,7 +83,7 @@
 					</object>
 					<object class="NSMenuItem" id="689979982">
 						<reference key="NSMenu" ref="970213341"/>
-						<string key="NSTitle">Item 3</string>
+						<string key="NSTitle">Quit</string>
 						<string key="NSKeyEquiv"/>
 						<int key="NSMnemonicLoc">2147483647</int>
 						<reference key="NSOnImage" ref="16436140"/>
@@ -100,6 +110,38 @@
 						<reference key="destination" ref="970213341"/>
 					</object>
 					<int key="connectionID">537</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">configurationsHeaderItem</string>
+						<reference key="source" ref="976324537"/>
+						<reference key="destination" ref="580780565"/>
+					</object>
+					<int key="connectionID">539</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">configurationsFooterItem</string>
+						<reference key="source" ref="976324537"/>
+						<reference key="destination" ref="21999158"/>
+					</object>
+					<int key="connectionID">540</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBActionConnection" key="connection">
+						<string key="label">showPreferences:</string>
+						<reference key="source" ref="976324537"/>
+						<reference key="destination" ref="304413193"/>
+					</object>
+					<int key="connectionID">570</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBActionConnection" key="connection">
+						<string key="label">terminate:</string>
+						<reference key="source" ref="1050"/>
+						<reference key="destination" ref="689979982"/>
+					</object>
+					<int key="connectionID">572</int>
 				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -147,6 +189,7 @@
 							<reference ref="580780565"/>
 							<reference ref="304413193"/>
 							<reference ref="689979982"/>
+							<reference ref="21999158"/>
 						</object>
 						<reference key="parent" ref="0"/>
 					</object>
@@ -156,13 +199,18 @@
 						<reference key="parent" ref="970213341"/>
 					</object>
 					<object class="IBObjectRecord">
-						<int key="objectID">535</int>
-						<reference key="object" ref="304413193"/>
+						<int key="objectID">538</int>
+						<reference key="object" ref="21999158"/>
 						<reference key="parent" ref="970213341"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">536</int>
 						<reference key="object" ref="689979982"/>
+						<reference key="parent" ref="970213341"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">535</int>
+						<reference key="object" ref="304413193"/>
 						<reference key="parent" ref="970213341"/>
 					</object>
 				</object>
@@ -180,9 +228,11 @@
 					<string>534.IBPluginDependency</string>
 					<string>535.IBPluginDependency</string>
 					<string>536.IBPluginDependency</string>
+					<string>538.IBPluginDependency</string>
 				</object>
 				<object class="NSMutableArray" key="dict.values">
 					<bool key="EncodedWithXMLCoder">YES</bool>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
@@ -206,7 +256,7 @@
 				<reference key="dict.values" ref="0"/>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">537</int>
+			<int key="maxID">572</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes"/>
 		<int key="IBDocument.localizationMode">0</int>
