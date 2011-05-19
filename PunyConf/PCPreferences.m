@@ -88,12 +88,13 @@ static const CFStringRef kSelectedConfigurationPrefKey = CFSTR("SelectedConfigur
 
 - (id)outlineView:(NSOutlineView *)outlineView objectValueForTableColumn:(NSTableColumn *)tableColumn byItem:(id)item
 {
+    id parent = [outlineView parentForItem:item];
     if ([[tableColumn identifier] isEqualToString:@"Key"])
     {
-        id parent = [outlineView parentForItem:item];
         if (!parent)
         {
-            return [NSString stringWithFormat:@"Configuration #%d", (int) [configurations indexOfObject:item] + 1];
+            // Ugh, this is roundabout
+            return [self titleForConfigurationAtIndex:[configurations indexOfObject:item]];
         }
         else if ([parent isKindOfClass:[NSDictionary class]])
         {
@@ -110,7 +111,11 @@ static const CFStringRef kSelectedConfigurationPrefKey = CFSTR("SelectedConfigur
     }
     else // Value column
     {
-        if ([item isKindOfClass:[NSDictionary class]] || [item isKindOfClass:[NSArray class]])
+        if (!parent)
+        {
+            return @"";
+        }
+        else if ([item isKindOfClass:[NSDictionary class]] || [item isKindOfClass:[NSArray class]])
         {
             int count = (int) [item count];
             return [NSString stringWithFormat:@"%d item%@", count, count == 1 ? @"" : @"s"];
