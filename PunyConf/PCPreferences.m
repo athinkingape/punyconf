@@ -94,7 +94,9 @@ static const CFStringRef kSelectedConfigurationPrefKey = CFSTR("SelectedConfigur
         if (!parent)
         {
             // Ugh, this is roundabout
-            return [self titleForConfigurationAtIndex:[configurations indexOfObject:item]];
+            NSString *title = [self titleForConfigurationAtIndex:[configurations indexOfObject:item]];
+            NSDictionary *boldAttrs = [NSDictionary dictionaryWithObject:[NSFont boldSystemFontOfSize:12] forKey:NSFontAttributeName];
+            return [[[NSAttributedString alloc] initWithString:title attributes:boldAttrs] autorelease];
         }
         else if ([parent isKindOfClass:[NSDictionary class]])
         {
