@@ -11,6 +11,7 @@
     if (self)
     {
         preferences = [prefs retain];
+        [self setWindowFrameAutosaveName:@"PreferencesWindow"];
     }
     return self;
 }
