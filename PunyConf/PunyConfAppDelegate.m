@@ -84,10 +84,7 @@
 {
     if (!preferencesController)
     {
-        preferencesController = [[PreferencesWindowController alloc] initWithWindowNibName:@"Preferences"];
-        [preferencesController loadWindow];
-        [[preferencesController preferencesOutline] setDataSource:preferences];
-        [[preferencesController preferencesOutline] reloadData];
+        preferencesController = [[PreferencesWindowController alloc] initWithPreferences:preferences];
         [preferencesController showWindow:sender];
     }
     // XXX: Focus it

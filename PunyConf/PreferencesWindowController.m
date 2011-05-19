@@ -1,13 +1,29 @@
 #import "PreferencesWindowController.h"
-
+#import "PCPreferences.h"
 
 @implementation PreferencesWindowController
 
 @synthesize preferencesOutline;
 
-- (void)dealloc
+- (id)initWithPreferences:(PCPreferences *)prefs
 {
-    [super dealloc];
+    self = [super initWithWindowNibName:@"Preferences"];
+    if (self)
+    {
+        preferences = [prefs retain];
+    }
+    return self;
+}
+
+- (void)windowDidLoad
+{
+    [super windowDidLoad];
+    [preferencesOutline setDataSource:preferences];
+    [preferencesOutline reloadData];
+    for (id item in preferences.configurations)
+    {
+        [preferencesOutline expandItem:item];
+    }
 }
 
 - (BOOL)outlineView:(NSOutlineView *)outlineView shouldEditTableColumn:(NSTableColumn *)tableColumn item:(id)item
@@ -20,6 +36,12 @@
     {
         return [[tableColumn identifier] isEqualToString:@"Value"];
     }
+}
+
+- (void)dealloc
+{
+    [preferences release];
+    [super dealloc];
 }
 
 @end
