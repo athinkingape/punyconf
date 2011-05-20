@@ -18,7 +18,9 @@ static const CFStringRef kSelectedConfigurationPrefKey = CFSTR("SelectedConfigur
         }
         else
         {
-            configurations = [[NSMutableArray alloc] initWithObjects:[NSMutableDictionary dictionaryWithObject:@"localhost" forKey:@"host"], [NSMutableDictionary dictionaryWithObject:@"example.com" forKey:@"host"], nil];
+            NSMutableDictionary *local = [NSMutableDictionary dictionaryWithObjectsAndKeys:@"localhost", @"host", @"8000", @"port", nil];
+            NSMutableDictionary *remote = [NSMutableDictionary dictionaryWithObjectsAndKeys:@"example.com", @"host", @"80", @"port", nil];
+            configurations = [[NSMutableArray alloc] initWithObjects:local, remote, nil];
         }
 
         Boolean exists;
