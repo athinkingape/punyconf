@@ -1,5 +1,6 @@
 #import <Cocoa/Cocoa.h>
 
+@class PCJSONServer;
 @class PCPreferences;
 @class PreferencesWindowController;
 
@@ -7,6 +8,7 @@
 @private
     PCPreferences *preferences;
     PreferencesWindowController *preferencesController;
+    PCJSONServer *server;
 
     NSStatusItem *statusItem;
     NSMenu *menuBarExtra;

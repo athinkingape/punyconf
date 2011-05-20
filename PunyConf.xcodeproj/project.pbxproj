@@ -19,6 +19,9 @@
 		50C37FC113851064002BFC7B /* Preferences.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50C37FC013851064002BFC7B /* Preferences.xib */; };
 		50C37FC3138582F1002BFC7B /* Box.png in Resources */ = {isa = PBXBuildFile; fileRef = 50C37FC2138582F1002BFC7B /* Box.png */; };
 		50C37FFA138597F2002BFC7B /* PreferencesWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50C37FF9138597F2002BFC7B /* PreferencesWindowController.m */; };
+		50C37FFE1385D1A1002BFC7B /* PCJSONServer.m in Sources */ = {isa = PBXBuildFile; fileRef = 50C37FFD1385D1A1002BFC7B /* PCJSONServer.m */; };
+		50C380751385D549002BFC7B /* GCDAsyncSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 50C380741385D549002BFC7B /* GCDAsyncSocket.m */; };
+		50C380771385D715002BFC7B /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50C380761385D715002BFC7B /* Security.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +46,11 @@
 		50C37FC2138582F1002BFC7B /* Box.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Box.png; sourceTree = "<group>"; };
 		50C37FF8138597F2002BFC7B /* PreferencesWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreferencesWindowController.h; sourceTree = "<group>"; };
 		50C37FF9138597F2002BFC7B /* PreferencesWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PreferencesWindowController.m; sourceTree = "<group>"; };
+		50C37FFC1385D1A1002BFC7B /* PCJSONServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCJSONServer.h; sourceTree = "<group>"; };
+		50C37FFD1385D1A1002BFC7B /* PCJSONServer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCJSONServer.m; sourceTree = "<group>"; };
+		50C380731385D549002BFC7B /* GCDAsyncSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDAsyncSocket.h; sourceTree = "<group>"; };
+		50C380741385D549002BFC7B /* GCDAsyncSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDAsyncSocket.m; sourceTree = "<group>"; };
+		50C380761385D715002BFC7B /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,6 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				50C380771385D715002BFC7B /* Security.framework in Frameworks */,
 				50C37F911384EDB1002BFC7B /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -79,6 +88,7 @@
 			isa = PBXGroup;
 			children = (
 				50C37F901384EDB1002BFC7B /* Cocoa.framework */,
+				50C380761385D715002BFC7B /* Security.framework */,
 				50C37F921384EDB1002BFC7B /* Other Frameworks */,
 			);
 			name = Frameworks;
@@ -105,6 +115,10 @@
 				50C37FF8138597F2002BFC7B /* PreferencesWindowController.h */,
 				50C37FF9138597F2002BFC7B /* PreferencesWindowController.m */,
 				50C37FC013851064002BFC7B /* Preferences.xib */,
+				50C37FFC1385D1A1002BFC7B /* PCJSONServer.h */,
+				50C37FFD1385D1A1002BFC7B /* PCJSONServer.m */,
+				50C380731385D549002BFC7B /* GCDAsyncSocket.h */,
+				50C380741385D549002BFC7B /* GCDAsyncSocket.m */,
 				50C37FAD1384F77D002BFC7B /* local.png */,
 				50C37FAF1384F969002BFC7B /* local-alt.png */,
 				50C37F971384EDB1002BFC7B /* Supporting Files */,
@@ -195,6 +209,8 @@
 				50C37FA41384EDB1002BFC7B /* PunyConfAppDelegate.m in Sources */,
 				50C37FBB138505D4002BFC7B /* PCPreferences.m in Sources */,
 				50C37FFA138597F2002BFC7B /* PreferencesWindowController.m in Sources */,
+				50C37FFE1385D1A1002BFC7B /* PCJSONServer.m in Sources */,
+				50C380751385D549002BFC7B /* GCDAsyncSocket.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

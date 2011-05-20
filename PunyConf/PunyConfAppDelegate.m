@@ -1,4 +1,5 @@
 #import "PunyConfAppDelegate.h"
+#import "PCJSONServer.h"
 #import "PCPreferences.h"
 #import "PreferencesWindowController.h"
 
@@ -25,6 +26,13 @@
     [preferences addObserver:self forKeyPath:@"selectedConfigurationIndex" options:(NSKeyValueObservingOptionInitial | NSKeyValueObservingOptionOld) context:nil];
 
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(windowWillClose:) name:NSWindowWillCloseNotification object:nil];
+
+    server = [[PCJSONServer alloc] init];
+    if (![server listen])
+    {
+        NSApplication *app = [notification object];
+        [app terminate:nil];
+    }
 }
 
 - (void)selectConfiguration:(id)sender
@@ -108,6 +116,7 @@
 
 - (void)dealloc
 {
+    [server release];
     [preferences release];
     [preferencesController release];
     [statusItem release];
