@@ -1,5 +1,4 @@
 #import "PunyConfAppDelegate.h"
-#import "PCJSONServer.h"
 #import "PCPreferences.h"
 #import "PreferencesWindowController.h"
 
@@ -28,10 +27,24 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(windowWillClose:) name:NSWindowWillCloseNotification object:nil];
 
     server = [[PCJSONServer alloc] init];
+    server.delegate = self;
     if (![server listen])
     {
         NSApplication *app = [notification object];
         [app terminate:nil];
+    }
+}
+
+- (id)currentConfiguration
+{
+    NSInteger index = preferences.selectedConfigurationIndex;
+    if (index == NSNotFound)
+    {
+        return nil;
+    }
+    else
+    {
+        return [preferences.configurations objectAtIndex:index];
     }
 }
 

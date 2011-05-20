@@ -1,10 +1,10 @@
 #import <Cocoa/Cocoa.h>
+#import "PCJSONServer.h"
 
-@class PCJSONServer;
 @class PCPreferences;
 @class PreferencesWindowController;
 
-@interface PunyConfAppDelegate : NSObject <NSApplicationDelegate> {
+@interface PunyConfAppDelegate : NSObject <NSApplicationDelegate, PCJSONServerDelegate> {
 @private
     PCPreferences *preferences;
     PreferencesWindowController *preferencesController;

@@ -22,6 +22,7 @@
 		50C37FFE1385D1A1002BFC7B /* PCJSONServer.m in Sources */ = {isa = PBXBuildFile; fileRef = 50C37FFD1385D1A1002BFC7B /* PCJSONServer.m */; };
 		50C380751385D549002BFC7B /* GCDAsyncSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 50C380741385D549002BFC7B /* GCDAsyncSocket.m */; };
 		50C380771385D715002BFC7B /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50C380761385D715002BFC7B /* Security.framework */; };
+		50C380EE1385ED7F002BFC7B /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 50C380ED1385ED7E002BFC7B /* JSONKit.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +52,8 @@
 		50C380731385D549002BFC7B /* GCDAsyncSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDAsyncSocket.h; sourceTree = "<group>"; };
 		50C380741385D549002BFC7B /* GCDAsyncSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDAsyncSocket.m; sourceTree = "<group>"; };
 		50C380761385D715002BFC7B /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		50C380EC1385ED7E002BFC7B /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONKit.h; sourceTree = "<group>"; };
+		50C380ED1385ED7E002BFC7B /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKit.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +122,8 @@
 				50C37FFD1385D1A1002BFC7B /* PCJSONServer.m */,
 				50C380731385D549002BFC7B /* GCDAsyncSocket.h */,
 				50C380741385D549002BFC7B /* GCDAsyncSocket.m */,
+				50C380EC1385ED7E002BFC7B /* JSONKit.h */,
+				50C380ED1385ED7E002BFC7B /* JSONKit.m */,
 				50C37FAD1384F77D002BFC7B /* local.png */,
 				50C37FAF1384F969002BFC7B /* local-alt.png */,
 				50C37F971384EDB1002BFC7B /* Supporting Files */,
@@ -211,6 +216,7 @@
 				50C37FFA138597F2002BFC7B /* PreferencesWindowController.m in Sources */,
 				50C37FFE1385D1A1002BFC7B /* PCJSONServer.m in Sources */,
 				50C380751385D549002BFC7B /* GCDAsyncSocket.m in Sources */,
+				50C380EE1385ED7F002BFC7B /* JSONKit.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,4 +1,5 @@
 #import "PCJSONServer.h"
+#import "JSONKit.h"
 
 static int serverPort = 47477;
 
@@ -11,6 +12,8 @@ static int serverPort = 47477;
 @end
 
 @implementation PCJSONServer
+
+@synthesize delegate;
 
 - (id)init
 {
@@ -57,8 +60,22 @@ static int serverPort = 47477;
     PCJSONSocketState *state = [sock userData];
     if (state)
     {
-        static const char httpResp[] = "HTTP/1.1 200 OK\r\nContent-Length:4\r\n\r\nTEST";
-        NSData *payload = [[NSData alloc] initWithBytesNoCopy:(void *) httpResp length:sizeof httpResp - 1 freeWhenDone:NO];
+        id conf = [delegate currentConfiguration];
+        NSMutableData *payload;
+        if (conf)
+        {
+            NSData *json = [conf JSONData];
+            int len = (int) [json length];
+            NSData *header = [[NSString stringWithFormat:@"HTTP/1.1 200 OK\r\nContent-Type: application/json; charset=utf-8\r\nContent-Length:%d\r\n\r\n", len] dataUsingEncoding:NSUTF8StringEncoding];
+            payload = [[NSMutableData alloc] initWithCapacity:[header length] + len];
+            [payload appendData:header];
+            [payload appendData:json];
+        }
+        else
+        {
+            static const char httpResp[] = "HTTP/1.1 204 No Content\r\n\r\n";
+            payload = [[NSData alloc] initWithBytesNoCopy:(void *)httpResp length:sizeof httpResp - 1 freeWhenDone:NO];
+        }
         [sock writeData:payload withTimeout:-1 tag:0];
         [payload release];
         [sock disconnectAfterWriting];
