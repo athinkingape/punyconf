@@ -68,6 +68,10 @@
             NSMenuItem *configItem = [[NSMenuItem alloc] initWithTitle:[preferences titleForConfigurationAtIndex:i] action:@selector(selectConfiguration:) keyEquivalent:@""];
             [configItem setTarget:self];
             [configItem setTag:i];
+            if (i == preferences.selectedConfigurationIndex)
+            {
+                [configItem setState:NSOnState];
+            }
             [menuBarExtra insertItem:configItem atIndex:listStart + i];
             [configItem release];
         }
