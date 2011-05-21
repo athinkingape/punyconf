@@ -12,6 +12,9 @@ typedef enum {
 } PCJSState;
 
 @interface PCJSContext : NSObject
+{
+    int state;
+}
 @property (assign) int state;
 @end
 

@@ -7,6 +7,7 @@
 
 @interface PCJSONServer : NSObject <GCDAsyncSocketDelegate>
 {
+    id<PCJSONServerDelegate> delegate;
 @private
     GCDAsyncSocket *listenSocket;
 }
