@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		501D3B3B139DA99800968F7C /* remote.png in Resources */ = {isa = PBXBuildFile; fileRef = 501D3B3A139DA99800968F7C /* remote.png */; };
+		501D3B3E139DAA1C00968F7C /* remote-alt.png in Resources */ = {isa = PBXBuildFile; fileRef = 501D3B3D139DAA1C00968F7C /* remote-alt.png */; };
 		50C37F911384EDB1002BFC7B /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50C37F901384EDB1002BFC7B /* Cocoa.framework */; };
 		50C37F9B1384EDB1002BFC7B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 50C37F991384EDB1002BFC7B /* InfoPlist.strings */; };
 		50C37F9E1384EDB1002BFC7B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 50C37F9D1384EDB1002BFC7B /* main.m */; };
@@ -26,6 +28,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		501D3B3A139DA99800968F7C /* remote.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = remote.png; sourceTree = "<group>"; };
+		501D3B3D139DAA1C00968F7C /* remote-alt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "remote-alt.png"; sourceTree = "<group>"; };
 		50C37F8C1384EDB1002BFC7B /* PunyConf.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PunyConf.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		50C37F901384EDB1002BFC7B /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		50C37F931384EDB1002BFC7B /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -126,6 +130,8 @@
 				50C380ED1385ED7E002BFC7B /* JSONKit.m */,
 				50C37FAD1384F77D002BFC7B /* local.png */,
 				50C37FAF1384F969002BFC7B /* local-alt.png */,
+				501D3B3A139DA99800968F7C /* remote.png */,
+				501D3B3D139DAA1C00968F7C /* remote-alt.png */,
 				50C37F971384EDB1002BFC7B /* Supporting Files */,
 			);
 			path = PunyConf;
@@ -200,6 +206,8 @@
 				50C37FB01384F969002BFC7B /* local-alt.png in Resources */,
 				50C37FC113851064002BFC7B /* Preferences.xib in Resources */,
 				50C37FC3138582F1002BFC7B /* Box.png in Resources */,
+				501D3B3B139DA99800968F7C /* remote.png in Resources */,
+				501D3B3E139DAA1C00968F7C /* remote-alt.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
